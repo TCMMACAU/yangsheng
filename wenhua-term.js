@@ -11,7 +11,7 @@ var N=[
 var d=new Date(Date.now()+8*3600e3).toISOString().slice(0,10),n=null;
 for(var k=0;k<N.length;k++)if(N[k].from<=d){n=N[k];break;}
 var el=document.getElementById("term-wh");if(!el)return;if(!n){el.remove();return;}
-var h='<p class="kicker">本節氣文化</p><h2>'+n.term+'</h2><p class="date">'+n.when+'</p>';
+var h='<p class="kicker">本節氣文化</p><h2>'+n.term+'</h2><img class="ill" src="/yangsheng/art/jieqi/'+n.slug+'.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="'+n.term+'時節水墨插圖"><p class="date">'+n.when+'</p>';
 for(var i=0;i<n.items.length;i++){var t=n.items[i];h+='<h3>'+t[1]+'</h3><blockquote>'+t[2]+'<cite>'+t[0]+'</cite></blockquote><p>'+t[3]+'</p>';}
 h+='<a class="to" href="/yangsheng/jieqi/#'+n.slug+'">'+n.term+'的名稱由來與三候 →</a>';
 el.innerHTML=h;el.setAttribute("aria-label","本節氣文化 · "+n.term);el.hidden=false;
