@@ -1,1 +1,1 @@
-import{n as e}from"./rolldown-runtime-CbXtAM7H.js";import{U as t}from"./seasons-Bl8TXwGu.js";var n=e(t(),1);function r(){let[e,t]=(0,n.useState)(!1);return(0,n.useEffect)(()=>t(!0),[]),e}export{r as t};
+import{n as e}from"./rolldown-runtime-CbXtAM7H.js";import{U as t}from"./seasons-5052bb9a.js";var n=e(t(),1);function r(){let[e,t]=(0,n.useState)(!1);return(0,n.useEffect)(()=>t(!0),[]),e}export{r as t};
