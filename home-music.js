@@ -70,7 +70,7 @@
 
   var css =
     "#ys-music{position:relative;flex-shrink:0;z-index:30}" +
-    "#ys-music .ys-btn{max-width:7.5rem;min-height:2.25rem;overflow:hidden;border:1px solid var(--color-line,#d8ccb6);border-radius:9999px;background:color-mix(in srgb,var(--color-paper,#f3ecdf) 92%,transparent);padding:0 .7rem;font-size:.7rem;letter-spacing:.06em;text-overflow:ellipsis;white-space:nowrap;color:var(--color-ink,#1c241f);cursor:pointer}" +
+    "#ys-music .ys-btn{display:inline-flex;align-items:center;justify-content:center;max-width:9rem;min-height:2.75rem;height:2.75rem;overflow:hidden;border:1px solid var(--color-line,#d8ccb6);border-radius:9999px;background:color-mix(in srgb,var(--color-paper,#f3ecdf) 92%,transparent);padding:0 .75rem;font-size:.875rem;letter-spacing:.02em;text-overflow:ellipsis;white-space:nowrap;color:var(--color-ink,#1c241f);cursor:pointer;flex-shrink:0;box-sizing:border-box}" +
     "#ys-music .ys-btn[aria-pressed='true']{background:#3F6B5C;color:#f3ecdf;border-color:transparent}" +
     "#ys-music .ys-panel{position:absolute;right:0;top:calc(100% + .4rem);z-index:60;width:min(88vw,16.5rem);max-height:min(70vh,22rem);overflow-y:auto;border:1px solid var(--color-line,#d8ccb6);border-radius:.85rem;background:var(--color-paper,#f3ecdf);padding:.65rem;box-shadow:0 .75rem 1.75rem rgb(0 0 0 / .16)}" +
     "#ys-music .ys-kick{font-size:.7rem;letter-spacing:.1em;color:#3F6B5C;margin:0 0 .4rem}" +
@@ -82,7 +82,7 @@
     "#ys-music .ys-mute{display:inline-flex;align-items:center;min-height:2rem;margin-top:.15rem;padding:0 .7rem;border:1px solid var(--color-line,#d8ccb6);border-radius:9999px;background:transparent;font-size:.75rem;color:var(--color-ink,#1c241f);cursor:pointer}" +
     "#ys-music .ys-credit{margin:.45rem 0 0;font-size:.62rem;line-height:1.45;color:var(--color-muted,#6e6558)}" +
     "@media(max-width:640px){" +
-    "#ys-music .ys-btn{max-width:5.5rem;padding:0 .5rem;font-size:.65rem}" +
+    "#ys-music .ys-btn{max-width:6.5rem;padding:0 .55rem;font-size:.75rem}" +
     "#ys-music .ys-panel{position:fixed;left:.5rem;right:.5rem;top:calc(env(safe-area-inset-top,0px) + 3.6rem);width:auto;max-width:none;max-height:min(60vh,20rem)}" +
     "}" +
     "@media print{#ys-music{display:none}}";
@@ -306,9 +306,11 @@
   }
 
   function mountTarget() {
+    var actions = document.querySelector("header .hdr-actions");
+    if (actions) return actions;
     var headerRight = document.querySelector("header .flex.items-center.gap-2");
     if (headerRight) return headerRight;
-    var headerInner = document.querySelector("header .mx-auto.flex");
+    var headerInner = document.querySelector("header .mx-auto.flex, header .hdr-top");
     return headerInner || null;
   }
 
